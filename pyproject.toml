@@ -1,6 +1,7 @@
 [project]
 name = "ziba_imputer"
 dynamic = ["version"]
+license = { file = "LICENSE" }
 description = "A python package for performing various imputation strategies."
 readme = "README.md"
 requires-python = ">=3.12"
@@ -23,6 +24,7 @@ write_to = "src/ziba/_version.py"
 version_scheme = "guess-next-dev"
 local_scheme = "node-and-date"
 
+
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
@@ -35,6 +37,12 @@ defineConstant = { DEBUG = true }
 reportMissingImports = "error"
 reportMissingTypeStubs = false
 pythonPlatform = "Linux"
+
+[tool.uv.workspace]
+members = [
+    "ziba",
+    "test",
+]
 
 [dependency-groups]
 torch = [
